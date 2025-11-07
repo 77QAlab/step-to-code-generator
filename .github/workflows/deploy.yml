@@ -6,19 +6,23 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: package-lock.json
           
       - name: Install dependencies
         run: npm ci
@@ -26,14 +30,9 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Deploy
-        run: echo "Deployment step - configure based on your hosting platform"
-        # Add your deployment commands here
-        # Examples:
-        # - Deploy to GitHub Pages
-        # - name: Deploy to GitHub Pages
-        #   uses: peaceiris/actions-gh-pages@v3
-        #   with:
-        #     github_token: ${{ secrets.GITHUB_TOKEN }}
-        #     publish_dir: ./dist
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
 
