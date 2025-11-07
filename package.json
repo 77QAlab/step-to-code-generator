@@ -1,0 +1,45 @@
+{
+  "name": "step-to-code-generator",
+  "version": "1.0.0",
+  "description": "Convert plain English test steps into executable test code",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.0.0",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5"
+  },
+  "keywords": [
+    "testing",
+    "test-automation",
+    "playwright",
+    "cypress",
+    "testcafe",
+    "code-generator",
+    "bdd",
+    "test-framework"
+  ],
+  "author": "77QAlab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/77QAlab/step-to-code-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/77QAlab/step-to-code-generator/issues"
+  },
+  "homepage": "https://77QAlab.github.io/step-to-code-generator"
+}

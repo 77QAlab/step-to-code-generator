@@ -1,0 +1,9 @@
+Step
+navigate to https://example.com
+click #login-button
+type user@example.com into #email
+type password123 into #password
+click #submit
+wait for .dashboard
+see text Welcome back
+see element #user-profile

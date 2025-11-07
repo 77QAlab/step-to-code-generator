@@ -1,0 +1,13 @@
+{
+  "test_name": "User Login Flow",
+  "framework": "playwright",
+  "steps": [
+    "navigate to https://example.com/login",
+    "type john@example.com into #email",
+    "type SecurePass123 into #password",
+    "click #login-btn",
+    "wait for .dashboard",
+    "see text Dashboard",
+    "see element #logout-button"
+  ]
+}

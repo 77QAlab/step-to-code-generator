@@ -1,0 +1,15 @@
+mappings:
+  - pattern: "login as {username} with password {password}"
+    code: |
+      await page.fill('#username', '{username}');
+      await page.fill('#password', '{password}');
+      await page.click('#login');
+    
+  - pattern: "verify user {name} is logged in"
+    code: |
+      await expect(page.locator('.user-name')).toContainText('{name}');
+    
+  - pattern: "add item {item} to cart"
+    code: |
+      await page.click(`[data-product="${{item}}"]`);
+      await page.click('.add-to-cart');
